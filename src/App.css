@@ -1,43 +1,213 @@
 .home {
   min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.65fr) minmax(560px, 1.45fr);
+  gap: 5rem;
   align-items: center;
-  justify-content: center;
 }
 
 .hero {
-  width: min(100%, 900px);
-  text-align: center;
+  width: 100%;
+  text-align: left;
 }
 
 .eyebrow {
-  color: var(--accent);
-  font-weight: 700;
+  color: #7c5cff;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: clamp(3rem, 9vw, 7rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
+  max-width: 460px;
+  font-size: clamp(3.5rem, 7vw, 6.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+h1::after {
+  content: "begin.";
+  display: block;
+  color: #7c5cff;
+}
+
+.hero h1 {
+  font-size: 0;
+}
+
+.hero h1::before {
+  content: "Where creative projects";
+  white-space: pre-line;
+  font-size: clamp(3.5rem, 7vw, 6.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  color: var(--text);
 }
 
 .hero-text {
-  max-width: 680px;
-  margin: 1.5rem auto 0;
+  max-width: 520px;
+  margin-top: 2rem;
   color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
 .primary-button {
   margin-top: 2rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  background: #7c5cff;
   color: white;
-  padding: 0.9rem 1.3rem;
-  font-weight: 700;
+  padding: 1rem 1.6rem;
+  font-weight: 800;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button::before {
+  content: "+";
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.35);
+}
+
+.workspace-section {
+  width: 100%;
+  margin: 0;
+}
+
+.section-heading {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.section-heading h2 {
+  margin-top: 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 650;
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.workspace-card {
+  position: relative;
+  min-height: 330px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.workspace-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--card-accent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.workspace-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.workspace-card__icon {
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--card-accent);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: var(--card-accent);
+  font-size: 1.8rem;
+}
+
+.workspace-card__menu {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.workspace-card__content {
+  margin-top: auto;
+}
+
+.workspace-card__category {
+  color: var(--card-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+}
+
+.workspace-card h2 {
+  max-width: 220px;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.workspace-card__footer {
+  margin-top: 2rem;
+}
+
+.workspace-card__footer span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--card-accent);
+  margin-bottom: 1.2rem;
+}
+
+.workspace-card__footer p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 1050px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  h1,
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
 }
