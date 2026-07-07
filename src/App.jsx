@@ -1,14 +1,10 @@
 import './styles/variables.css';
 import './styles/globals.css';
 import './App.css';
+import Home from './pages/Home.jsx';
 
 function App() {
-  return (
-    <main>
-      <h1>Foundry</h1>
-      <p>Where creative projects begin.</p>
-    </main>
-  );
+  return <Home />;
 }
 
 export default App;
