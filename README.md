@@ -1,16 +1,43 @@
-# React + Vite
+# Foundry
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An experimental React application exploring modern workspace layouts, project organization, and component-based UI design.
 
-Currently, two official plugins are available:
+## Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+⚠️ Early Prototype
 
-## React Compiler
+Foundry was built as part of my React learning journey while exploring Vite and modern frontend development. The project focuses on building reusable UI components and experimenting with application structure. Some ideas and components from this prototype may be incorporated into future projects.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Responsive landing page
+- Workspace card layout
+- Component-based architecture
+- Modern React + Vite setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies
+
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+
+## What I Learned
+
+This project helped me become familiar with:
+
+- React components
+- Project structure
+- Props
+- State management fundamentals
+- Vite development workflow
+- Modern frontend tooling
+
+## Future Ideas
+
+- User authentication
+- Persistent project storage
+- Search and filtering
+- Drag-and-drop organization
+- Cloud deployment
